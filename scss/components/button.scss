@@ -1,0 +1,24 @@
+$button-margin: 2%;
+
+button {
+    margin: $button-margin;
+    padding: 3px;
+    width: 100% - (2 * $button-margin);
+    box-sizing: border-box;
+
+    background-color: red;
+
+    border: 1px solid $primary-foreground;
+    border-radius: 2px;
+    font-size: 0.8em;
+}
+
+button.generate {
+    background-color: $highlight-positive;
+    color: lighten($highlight-positive, 30%);
+}
+
+button.delete {
+    background-color: $highlight-warn;
+    color: lighten($highlight-warn, 30%);
+}

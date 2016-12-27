@@ -1,0 +1,50 @@
+{
+  "name": "trapper",
+  "version": "0.0.1",
+  "description": "A simple and secure password management tool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava; rm test-locker-*.tp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anyweez/trapper.git"
+  },
+  "author": "Luke Segars (@anyweez)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anyweez/trapper/issues"
+  },
+  "homepage": "https://github.com/anyweez/trapper#readme",
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "electron": "^1.4.11"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.0",
+    "moment": "^2.17.1",
+    "mz": "^2.6.0",
+    "vue": "^2.1.4",
+    "vuex": "^2.1.1"
+  },
+  "ava": {
+    "files": [
+      "lib/locker/tests.js"
+    ],
+    "concurrency": 1,
+    "failFast": true,
+    "tap": false,
+    "powerAssert": false,
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  }
+}

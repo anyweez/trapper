@@ -1,0 +1,19 @@
+ul.locker {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        padding: 10px 1em;
+        border: 1px solid #bbb;
+        cursor: pointer;
+    }
+
+    li.empty {
+        color: $primary-background;
+        background-color: lighten($primary-foreground, 10%);
+    }
+
+    p {
+        font-style: italic;
+    }
+}

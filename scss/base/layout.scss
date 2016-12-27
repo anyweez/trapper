@@ -1,0 +1,35 @@
+header {
+    @include grid-row();
+
+    h1 {
+        @include grid-column(2);
+    }
+
+    div.search {
+        @include grid-column(10);
+        float: left !important;
+    }
+}
+
+main {
+    @include grid-row();
+    background-color: $primary-background;
+    color: $primary-foreground;
+
+    ul.locker {
+        @include grid-column(12);
+        padding: 0 !important;
+    }
+
+    li {
+        @include grid-row();
+
+        .lhs {
+            @include grid-column(10);
+        }
+
+        .rhs {
+            @include grid-column(2);
+        }
+    }
+}

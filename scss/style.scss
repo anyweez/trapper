@@ -1,0 +1,17 @@
+@import '../node_modules/foundation-sites/scss/foundation';
+
+$primary-foreground:    lighten(black, 20%);
+$primary-background:    #cecece;
+$secondary-background:  #E8C23E;
+$highlight-positive:    #207505; // todo: update
+$highlight-warn:        #751705; // todo: update
+
+@include foundation-global-styles;
+@include foundation-grid;
+
+@import 'base/layout';
+@import 'base/body';
+@import 'base/header';
+
+@import 'components/trapper-locker';
+@import 'components/button';

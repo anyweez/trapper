@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Trapper Password Manager</title>
+    <link rel="stylesheet" href="dist/style.css">
+
+    <!-- todo: change type to x-vue-component? -->
+    <script type="text/template" id="trapper-locker-template">
+        <ul class="locker">
+            <li class="empty" v-if="items.length > 0">
+                <div class="lhs">
+                    <h3>Create new entry</h3>
+                    <p>Add a new password.</p>
+                </div>
+            </li>
+            <li class="empty" v-if="items.length === 0">
+                <div class="lhs">
+                    <h3>No results found</h3>
+                    <p>Click to create new password.</p>
+                </div>
+            </li>
+            <li v-for="item in items" @click="clip(item)">
+                <div class="lhs">
+                    <h2>${ item.name }</h2>
+                    <p class="last-update">Last updated ${ created_ts(item) }</p>
+                </div>
+                <div class="rhs">
+                    <button class="generate" @click="gen(item)">Generate new</button>
+                    <button class="delete" @click="del(item)">Delete</button>
+                </div>
+            </li>
+        </ul>
+    </script>
+
+    <script type="text/template" id="session-pw-template">
+        <section id="session-pw">
+            <section class="login-box">
+                <p>Session key:</p>
+                <input type="password" class="password-box" v-model="pass">
+                <button @click="submit">Done</button>
+            </section>
+        </section>
+    </script>
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vuex/dist/vuex.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div id="vue">
+        <section id="session-pw"></section>
+        <header>
+            <h1>Trapper</h1>
+            <div class="search">
+                <input type="text" v-model="search" placeholder="Search for...">
+            </div>
+        </header>
+        <main>
+            <trapper-locker :items="search_entries" @remove="del" @regen="gen" @clip="clip"></trapper-locker>
+        </main>
+    </div>
+</body>
+
+</html>
