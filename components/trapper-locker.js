@@ -1,4 +1,5 @@
 const moment = require('moment');
+
 /**
  * Element that lists out all of the entries in a locker.
  */
@@ -11,7 +12,6 @@ Vue.component('trapper-locker', {
     methods: {
         created_ts(item) {
             return moment(item.created).fromNow();
-            // return item.created.toString();
         },
         del(item) {
             this.$emit('remove', item.id);
@@ -23,6 +23,7 @@ Vue.component('trapper-locker', {
             const sessionpw = require('../src/getpw')().session;
 
             sessionpw().then(pw => {
+                console.log('PASSWORD VALIDATED:');
                 console.log(pw);
                 // TODO: require session key
                 this.$emit('clip', item.id, pw);

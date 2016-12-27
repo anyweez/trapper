@@ -11,7 +11,8 @@ $highlight-warn:        #751705; // todo: update
 
 @import 'base/layout';
 @import 'base/body';
-@import 'base/header';
+@import 'base/header'; 
 
 @import 'components/trapper-locker';
+@import 'components/session-pw';
 @import 'components/button';

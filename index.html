@@ -27,8 +27,8 @@
                     <p class="last-update">Last updated ${ created_ts(item) }</p>
                 </div>
                 <div class="rhs">
-                    <button class="generate" @click="gen(item)">Generate new</button>
-                    <button class="delete" @click="del(item)">Delete</button>
+                    <button class="generate" @click.stop="gen(item)">Generate new</button>
+                    <button class="delete" @click.stop="del(item)">Delete</button>
                 </div>
             </li>
         </ul>
@@ -36,10 +36,11 @@
 
     <script type="text/template" id="session-pw-template">
         <section id="session-pw">
+            <div class="underlay"></div>
             <section class="login-box">
                 <p>Session key:</p>
                 <input type="password" class="password-box" v-model="pass">
-                <button @click="submit">Done</button>
+                <button @click="submit" @keypress.enter="submit">Done</button>
             </section>
         </section>
     </script>
@@ -51,7 +52,7 @@
 
 <body>
     <div id="vue">
-        <section id="session-pw"></section>
+        <section id="session-pw" style="display: none"></section>
         <header>
             <h1>Trapper</h1>
             <div class="search">

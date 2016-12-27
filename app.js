@@ -27,6 +27,11 @@ window.addEventListener('DOMContentLoaded', () => {
              * pre-existing rules.
              */
             gen: id => console.log('generating new pass for #' + id),
+            /**
+             * Validates the specified Password object and returns a promise that resolves
+             * if the password validates succesfully or rejects if it does not.
+             */
+            validate: pw => store.dispatch('validate_pw', pw),
         },
         computed: {
             /**

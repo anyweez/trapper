@@ -9,9 +9,10 @@ const initial = {
 module.exports = new Vuex.Store({
     state: initial,
     mutations: {
-        'delete_entry': require('./mutations/entry.delete'),
+        delete_entry: require('./mutations/entry.delete'),
     },
     actions: {
-        'load_clipboard': require('./actions/clipboard.load'),
+        load_clipboard: require('./actions/clipboard.load'),
+        validate_pw: require('./actions/validate_pw'),
     },
 });

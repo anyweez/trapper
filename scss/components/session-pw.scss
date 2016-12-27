@@ -1,0 +1,34 @@
+section {
+    div.underlay {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: black;
+        opacity: 0.6;
+    }
+
+    section.login-box {
+        text-align: center;
+        box-sizing: border-box;
+        padding: 5px;
+
+        position: fixed;
+        z-index: 100;
+        top: 100px;
+        right: 10px;
+        left: 10px;
+        background-color: $primary-background;
+
+        input {
+            width: 100%;
+            font-size: 2.4em;
+            text-align: center;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+    }
+}
